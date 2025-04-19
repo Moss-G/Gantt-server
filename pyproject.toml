@@ -1,0 +1,58 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gantt-mcp-server"
+version = "0.1.0"
+description = "An MCP server for managing Gantt charts through LLM interactions"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    {name = "Gantt MCP Server Team", email = "example@example.com"},
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Office/Business :: Scheduling",
+]
+dependencies = [
+    "mcp[cli]>=1.2.0",
+    "datetime",
+    "uuid",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pylint>=2.15.0",
+    "ruff>=0.0.261",
+    "black>=23.1.0",
+]
+
+[project.scripts]
+gantt-server = "gantt_mcp_server:main"
+
+[project.urls]
+"Homepage" = "https://github.com/yourusername/gantt-mcp-server"
+"Bug Tracker" = "https://github.com/yourusername/gantt-mcp-server/issues"
+"Documentation" = "https://github.com/yourusername/gantt-mcp-server/blob/main/README.md"
+"Source Code" = "https://github.com/yourusername/gantt-mcp-server"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+select = ["E", "F", "B", "I"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311", "py312"] 

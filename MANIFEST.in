@@ -1,0 +1,17 @@
+include LICENSE
+include README.md
+include pyproject.toml
+
+# Include data and chart directories but exclude actual data
+recursive-include data *.md
+recursive-exclude data *.json
+
+recursive-include charts *.md
+recursive-exclude charts *.html
+
+# Ensure we have placeholders for empty directories
+include data/.gitkeep
+include charts/.gitkeep
+
+# Include tests
+recursive-include tests *.py 
